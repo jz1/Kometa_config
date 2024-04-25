@@ -1,0 +1,369 @@
+libraries:
+  Movies:
+    schedule: hourly(11)
+    remove_overlays: false
+    reapply_overlays: false
+    overlay_files:
+    - file: overlays/backdrop
+    - file: overlays/rating
+    - default: language_count
+      template_variables:
+        use_dual: false
+        file_multi: overlays/images/multi_audio/main.png
+        horizontal_offset: 0
+        horizontal_align: right
+        vertical_offset: 40
+        vertical_align: bottom
+        back_color: '#00000000'
+    - default: resolution
+      template_variables:
+        use_edition: false
+        file: overlays/images/resolution/<<key>><<alt>>.png
+        use_1080p_dvhdrplus: false
+        use_1080p_dvhdr: false
+        use_1080p_plus: false
+        use_1080p_dv: false
+        use_1080p_hdr: false
+        use_720p_dvhdrplus: false
+        use_720p_dvhdr: false
+        use_720p_plus: false
+        use_720p_dv: false
+        use_720p_hdr: false
+        use_576p_dvhdr: false
+        use_576p_dvhdrplus: false
+        use_576p_plus: false
+        use_576p_dv: false
+        use_576p_hdr: false
+        use_480p_dvhdrplus: false
+        use_480p_dvhdr: false
+        use_480p_plus: false
+        use_480p_dv: false
+        use_480p_hdr: false
+        back_color: '#00000000'
+        back_align: left
+        vertical_align: bottom
+        horizontal_align: left
+        vertical_offset: 0
+        horizontal_offset: 5
+    - default: resolution
+      template_variables:
+        use_resolution: false
+        back_color: '#00000050'
+    - default: ribbon
+      template_variables:
+        use_razzie: false
+        file: overlays/images/ribbon/<<key>>.png
+        vertical_align: bottom
+        horizontal_align: left
+        vertical_offset: 20
+        horizontal_offset: 355
+    - default: audio_codec
+      template_variables:
+        file: overlays/images/audio_codec/<<key>>.png
+        back_color: '#00000000'
+        back_align: right
+        vertical_align: bottom
+        horizontal_align: right
+        vertical_offset: 0
+        horizontal_offset: 0
+    operations:
+      mass_critic_rating_update: imdb
+  Anime Movies:
+    schedule: hourly(11)
+    collection_files:
+    - file: collections/label_original_language.yml
+    - file: collections/anime_movies.yml
+    metadata_files:
+    - file: metadata/anime_movies.yml
+    remove_overlays: false
+    reapply_overlays: false
+    overlay_files:
+    - file: overlays/backdrop
+    - file: overlays/rating
+    - file: overlays/language_anime
+    - default: language_count
+      template_variables:
+        use_dual: false
+        file_multi: overlays/images/multi_audio/main.png
+        horizontal_offset: 0
+        horizontal_align: right
+        vertical_offset: 40
+        vertical_align: bottom
+        back_color: '#00000000'
+    - default: resolution
+      template_variables:
+        use_edition: false
+        file: overlays/images/resolution/<<key>><<alt>>.png
+        use_1080p_dvhdrplus: false
+        use_1080p_dvhdr: false
+        use_1080p_plus: false
+        use_1080p_dv: false
+        use_1080p_hdr: false
+        use_720p_dvhdrplus: false
+        use_720p_dvhdr: false
+        use_720p_plus: false
+        use_720p_dv: false
+        use_720p_hdr: false
+        use_576p_dvhdr: false
+        use_576p_dvhdrplus: false
+        use_576p_plus: false
+        use_576p_dv: false
+        use_576p_hdr: false
+        use_480p_dvhdrplus: false
+        use_480p_dvhdr: false
+        use_480p_plus: false
+        use_480p_dv: false
+        use_480p_hdr: false
+        back_color: '#00000000'
+        back_align: left
+        vertical_align: bottom
+        horizontal_align: left
+        vertical_offset: 0
+        horizontal_offset: 5
+    - default: resolution
+      template_variables:
+        use_resolution: false
+        back_color: '#00000050'
+    - default: audio_codec
+      template_variables:
+        file: overlays/images/audio_codec/<<key>>.png
+        back_color: '#00000000'
+        back_align: right
+        vertical_align: bottom
+        horizontal_align: right
+        vertical_offset: 0
+        horizontal_offset: 0
+    operations:
+      mass_critic_rating_update: imdb
+  TV Shows:
+    schedule: hourly(11)
+    remove_overlays: false
+    reapply_overlays: false
+    overlay_files:
+    - file: overlays/backdrop
+    - file: overlays/rating
+    - default: language_count
+      template_variables:
+        use_dual: false
+        file_multi: overlays/images/multi_audio/main.png
+        horizontal_offset: 0
+        horizontal_align: right
+        vertical_offset: 40
+        vertical_align: bottom
+        back_color: '#00000000'
+    - default: language_count
+      template_variables:
+        builder_level: episode
+        use_dual: false
+        file_multi: overlays/images/multi_audio/main.png
+        horizontal_offset: 35
+        horizontal_align: right
+        vertical_offset: 125
+        vertical_align: bottom
+        back_color: '#00000000'
+    - default: resolution
+      template_variables:
+        use_edition: false
+        file: overlays/images/resolution/<<key>><<alt>>.png
+        use_1080p_dvhdrplus: false
+        use_1080p_dvhdr: false
+        use_1080p_plus: false
+        use_1080p_dv: false
+        use_1080p_hdr: false
+        use_720p_dvhdrplus: false
+        use_720p_dvhdr: false
+        use_720p_plus: false
+        use_720p_dv: false
+        use_720p_hdr: false
+        use_576p_dvhdr: false
+        use_576p_dvhdrplus: false
+        use_576p_plus: false
+        use_576p_dv: false
+        use_576p_hdr: false
+        use_480p_dvhdrplus: false
+        use_480p_dvhdr: false
+        use_480p_plus: false
+        use_480p_dv: false
+        use_480p_hdr: false
+        back_color: '#00000000'
+        back_align: left
+        vertical_align: bottom
+        horizontal_align: left
+        vertical_offset: 0
+        horizontal_offset: 5
+    - default: resolution
+      template_variables:
+        builder_level: episode
+        vertical_align: bottom
+        horizontal_align: left
+        vertical_offset: 80
+        back_color: '#00000050'
+    - default: ribbon
+      template_variables:
+        use_razzie: false
+        file: overlays/images/ribbon/<<key>>.png
+        vertical_align: bottom
+        horizontal_align: right
+        vertical_offset: 20
+        horizontal_offset: 260
+    - default: audio_codec
+      template_variables:
+        file: overlays/images/audio_codec/<<key>>.png
+        back_color: '#00000000'
+        back_align: right
+        vertical_align: bottom
+        horizontal_align: right
+        vertical_offset: 0
+        horizontal_offset: 0
+    - default: audio_codec
+      template_variables:
+        builder_level: episode
+        vertical_align: bottom
+        horizontal_align: right
+        vertical_offset: 80
+        back_color: '#00000050'
+    - default: status
+      template_variables:
+        use_ended: false
+        back_color: '#00000070'
+        back_radius: 20
+        back_height: 50
+        back_width: 400
+        back_color_airing: '#01692070'
+        back_color_returning: '#81007F70'
+        back_color_canceled: '#ed1f1f70'
+        back_color_ended: '#00084770'
+        font: custom_fonts/Claspo-ND-Medium.ttf
+        vertical_align: top
+        vertical_offset: 10
+        horizontal_align: center
+    - default: streaming
+      template_variables:
+        stroke_width: 3
+        stroke_color: '#000000c9'
+        back_color: '#00000000'
+        vertical_offset: 500
+        vertical_align: bottom
+        horizontal_align: right
+    - default: episode_info
+      template_variables:
+        vertical_align: bottom
+        vertical_offset: 210
+        horizontal_align: left
+        back_color: '#00000050'
+    operations:
+      mass_critic_rating_update: imdb
+  Anime Shows:
+    schedule: hourly(11)
+    collection_files:
+    - file: collections/label_original_language.yml
+    remove_overlays: false
+    reapply_overlays: false
+    overlay_files:
+    - file: overlays/backdrop
+    - file: overlays/rating
+    - file: overlays/language_anime
+    - file: overlays/language_anime_episode
+    - default: language_count
+      template_variables:
+        use_dual: false
+        file_multi: overlays/images/multi_audio/main.png
+        horizontal_offset: 0
+        horizontal_align: right
+        vertical_offset: 40
+        vertical_align: bottom
+        back_color: '#00000000'
+    - default: language_count
+      template_variables:
+        builder_level: episode
+        use_dual: false
+        file_multi: overlays/images/multi_audio/main.png
+        horizontal_offset: 35
+        horizontal_align: right
+        vertical_offset: 125
+        vertical_align: bottom
+        back_color: '#00000000'
+    - default: resolution
+      template_variables:
+        use_edition: false
+        file: overlays/images/resolution/<<key>><<alt>>.png
+        use_1080p_dvhdrplus: false
+        use_1080p_dvhdr: false
+        use_1080p_plus: false
+        use_1080p_dv: false
+        use_1080p_hdr: false
+        use_720p_dvhdrplus: false
+        use_720p_dvhdr: false
+        use_720p_plus: false
+        use_720p_dv: false
+        use_720p_hdr: false
+        use_576p_dvhdr: false
+        use_576p_dvhdrplus: false
+        use_576p_plus: false
+        use_576p_dv: false
+        use_576p_hdr: false
+        use_480p_dvhdrplus: false
+        use_480p_dvhdr: false
+        use_480p_plus: false
+        use_480p_dv: false
+        use_480p_hdr: false
+        back_color: '#00000000'
+        back_align: left
+        vertical_align: bottom
+        horizontal_align: left
+        vertical_offset: 0
+        horizontal_offset: 5
+    - default: resolution
+      template_variables:
+        builder_level: episode
+        vertical_align: bottom
+        horizontal_align: left
+        vertical_offset: 80
+        back_color: '#00000050'
+    - default: audio_codec
+      template_variables:
+        file: overlays/images/audio_codec/<<key>>.png
+        back_color: '#00000000'
+        back_align: right
+        vertical_align: bottom
+        horizontal_align: right
+        vertical_offset: 0
+        horizontal_offset: 0
+    - default: audio_codec
+      template_variables:
+        builder_level: episode
+        vertical_align: bottom
+        horizontal_align: right
+        vertical_offset: 80
+        back_color: '#00000050'
+    - default: status
+      template_variables:
+        use_ended: false
+        back_color: '#00000070'
+        back_radius: 20
+        back_height: 50
+        back_width: 400
+        back_color_airing: '#01692070'
+        back_color_returning: '#81007F70'
+        back_color_canceled: '#ed1f1f70'
+        back_color_ended: '#00084770'
+        font: custom_fonts/Claspo-ND-Medium.ttf
+        vertical_align: top
+        vertical_offset: 10
+        horizontal_align: center
+    - default: streaming
+      template_variables:
+        stroke_width: 3
+        stroke_color: '#000000c9'
+        back_color: '#00000000'
+        vertical_offset: 500
+        vertical_align: bottom
+        horizontal_align: right
+    - default: episode_info
+      template_variables:
+        vertical_align: bottom
+        vertical_offset: 210
+        horizontal_align: left
+        back_color: '#00000050'
+    operations:
+      mass_critic_rating_update: imdb

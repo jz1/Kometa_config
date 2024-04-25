@@ -1,0 +1,35 @@
+templates:
+  languages:
+    conditionals: 
+      language_search: 
+        default: original_language 
+        conditions: 
+          - mapping_name: unknown
+            value: original_language.not
+      language_filter: 
+        default: <<key>>
+        conditions: 
+          - mapping_name: unknown
+            value: <<exclude_filter>>
+    plex_all: true
+    filters:
+      <<language_search>>: <<language_filter>>
+    build_collection: false
+    item_label: Language_<<key>>
+    non_item_remove_label: Language_<<key>>
+collections:
+  unknown: # add all the key languages used to the exclude_filter, so it can label a unknown foreign language
+    variables: {key: unknown, exclude_filter: 'en,ja,zh,ko'}
+    template: [name: languages]
+  english:
+    variables: {key: en}
+    template: [name: languages]
+  japanese:
+    variables: {key: ja}
+    template: [name: languages]
+  chinese:
+    variables: {key: zh}
+    template: [name: languages]
+  korean:
+    variables: {key: ko}
+    template: [name: languages]

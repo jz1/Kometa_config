@@ -1,0 +1,10 @@
+overlays:
+  Backdrop:
+    overlay:
+      name: Backdrop
+      file: overlays/images/backdrop/backdrop.png
+      horizontal_offset: 0
+      horizontal_align: center
+      vertical_offset: 0
+      vertical_align: bottom
+    plex_all: true

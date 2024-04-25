@@ -1,0 +1,114 @@
+overlays:
+  Backdrop:
+    overlay:
+      name: Backdrop
+      file: overlays/images/backdrop/rating.png
+      horizontal_offset: 215
+      horizontal_align: left
+      vertical_offset: 0
+      vertical_align: bottom
+    ignore_blank_results: true
+    plex_search:
+      all:
+        critic_rating.gte: 0.1
+        critic_rating.lte: 9.9
+  rating_highest:
+    overlay:
+      font_color: "#7bdf81" 
+      back_color: "#00000000"
+      group: rating_text
+      name: text(critic_rating)
+      stroke_width: 2
+      stroke_color: '#000000b3'
+      rating_type: critic_rating
+      weight: 20
+      font: custom_fonts/Poppins-Bold.ttf
+      font_size: 70
+      back_radius: 30
+      back_width: 120
+      back_height: 75
+      horizontal_offset: 235
+      horizontal_align: left
+      vertical_offset: 15
+      vertical_align: bottom
+    ignore_blank_results: true
+    plex_search:
+      all:
+        critic_rating.gte: 7.6
+        critic_rating.lte: 9.9
+        
+  rating_high:
+    overlay:
+      font_color: "#a3db76"
+      back_color: "#00000000"
+      group: rating_text
+      name: text(critic_rating)
+      stroke_width: 2
+      stroke_color: '#000000b3'
+      rating_type: critic_rating
+      weight: 20
+      font: custom_fonts/Poppins-Bold.ttf
+      font_size: 70
+      back_radius: 30
+      back_width: 120
+      back_height: 75
+      horizontal_offset: 235
+      horizontal_align: left
+      vertical_offset: 15
+      vertical_align: bottom
+    ignore_blank_results: true
+    plex_search:
+      all:
+        critic_rating.gte: 6.5
+        critic_rating.lte: 7.5
+        
+  rating_mid:
+    overlay:
+      font_color: "#d6db76"
+      back_color: "#00000000"
+      group: rating_text
+      name: text(critic_rating)
+      stroke_width: 2
+      stroke_color: '#000000b3'
+      rating_type: critic_rating
+      weight: 20
+      font: custom_fonts/Poppins-Bold.ttf
+      font_size: 70
+      back_radius: 30
+      back_width: 120
+      back_height: 75
+      horizontal_offset: 235
+      horizontal_align: left
+      vertical_offset: 15
+      vertical_align: bottom
+    ignore_blank_results: true
+    plex_search:
+      all:
+        critic_rating.gte: 5.0
+        critic_rating.lte: 6.5
+
+  rating_low:
+    overlay:
+      font_color: "#db8276"
+      back_color: "#00000000"
+      group: rating_text
+      name: text(critic_rating)
+      stroke_width: 2
+      stroke_color: '#000000b3'
+      rating_type: critic_rating
+      weight: 20
+      font: custom_fonts/Poppins-Bold.ttf
+      font_size: 70
+      back_radius: 30
+      back_width: 120
+      back_height: 75
+      horizontal_offset: 235
+      horizontal_align: left
+      vertical_offset: 15
+      vertical_align: bottom
+    ignore_blank_results: true
+    plex_search:
+      all:
+        critic_rating.gte: 0.1
+        critic_rating.lte: 5.0
+        

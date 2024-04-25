@@ -1,0 +1,86 @@
+external_templates:
+  default: templates
+  template_variables:
+    conditionals: 
+      country_flag: 
+        default: <<country>> 
+        conditions: 
+          - mapping_name: dub
+            value: <<country>>_dub
+      round: 
+        default: round
+        conditions: 
+          - mapping_name: dub
+            value: round_custom
+          - mapping_name: unknown
+            value: round_custom
+      file_<<key>>:
+        conditions:
+          - file.exists: false
+            url.exists: false
+            git.exists: false
+            repo.exists: false
+            value: overlays/images/flag/<<round>>/<<country_flag>>.png
+    default:
+      country: <<key>>
+    queue: flags
+    back_color: "#00000000"
+queues:
+  flags:
+      #Heighest weight flags
+    - vertical_align: bottom
+      horizontal_align: right
+      vertical_offset: 20
+      horizontal_offset: 260
+      #Lowest weight flag
+    - vertical_align: bottom
+      horizontal_align: center
+      vertical_offset: 20
+      horizontal_offset: 75
+templates: 
+  flags:
+    optional:
+      - extra_match
+    conditionals: 
+      label_search: 
+        default: label 
+        conditions: 
+          - mapping_name: dub
+            value: label.not
+      language_regex: 
+        default: '(<<mapping_name>>)' 
+        conditions: 
+          - mapping_name: unknown
+            value: '^(?!<<disabled_lang>>$)'
+          - mapping_name: dub
+            value: '(<<dub_lang>>)' 
+    ignore_blank_results: true
+    plex_search:
+      all:
+        <<label_search>>: Language_<<key>>
+    filters:
+      - audio_language.regex: (?i)<<language_regex>>
+      - audio_track_title.regex: '(?i)^<<extra_match>> \('
+overlays: 
+  # Language_<<KEY>>, Foreign Language Label: Known Foreign Languages (Scanned through collection and labeled)
+  ## extra_match: unknown, will match if it got unknown audio language
+  english:
+    variables: {key: en, weight: 610, country: us, extra_match: unknown}
+    template: [name: flags, name: standard]
+  korean:
+    variables: {key: ko, weight: 550, country: kr, extra_match: unknown}
+    template: [name: flags, name: standard]
+  chinese:
+    variables: {key: zh, weight: 540, country: cn, extra_match: unknown}
+    template: [name: flags, name: standard]
+  japanese:
+    variables: {key: ja, weight: 560, country: jp, extra_match: unknown}
+    template: [name: flags, name: standard]
+  # Language_unknown, Unknown Language Label: Unknown Foreign Languages (not any of the <<disabled_lang>> (known) foreign language flags) (language got to be devided by | )
+  unknown:
+    variables: {key: unknown, weight: 20, disabled_lang: english|korean|chinese|japanese, extra_match: unknown}
+    template: [name: flags, name: standard]
+  # Language_<<KEY>, Dub Language Label: <<dub_lang>> (english) Dub (if <<dub_lang>> (english) audio available, when <<KEY> (en) is not the foreign language.)
+  dub:
+    variables: {key: en, weight: 10, country: us, dub_lang: english}
+    template: [name: flags, name: standard]

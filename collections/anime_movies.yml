@@ -1,0 +1,32 @@
+templates:
+  Collection:
+    optional:
+      - collection
+      - movie
+      - company
+      - sort
+    tmdb_collection_details: <<collection>>
+    tmdb_movie: <<movie>>
+    tmdb_company: <<company>>
+    url_poster: <<poster>>
+    sort_title: <<sort>>
+    sync_mode: sync
+    collection_order: release
+  Trakt:
+    trakt_list_details: <<list>>
+    url_poster: <<poster>>
+    sync_mode: sync
+    collection_order: custom
+collections:
+  Studio Ghibli Movies: #https://theposterdb.com/posters/1712
+    template: {name: Collection, company: 10342, poster: https://theposterdb.com/api/assets/393, sort: +++++_Studio_Ghibli}
+  Dragon Ball: #https://theposterdb.com/poster/36693
+    template: {name: Collection, collection: 386410, poster: https://theposterdb.com/api/assets/257458}
+  Dragon Ball Z: #https://theposterdb.com/posters/2645
+    template: {name: Collection, collection: 425164, poster: https://theposterdb.com/api/assets/257459}
+  Dragon Ball Super: #https://theposterdb.com/posters/33191
+    template: {name: Collection, collection: 620873, poster: https://theposterdb.com/api/assets/257460}
+  Pokémon Alternate Continuity: #https://theposterdb.com/posters/240680
+    template: {name: Collection, collection: 661031, poster: https://theposterdb.com/api/assets/317613}
+  Pokémon: #https://theposterdb.com/posters/6148
+    template: {name: Collection, collection: 34055, poster: https://theposterdb.com/api/assets/317613}
